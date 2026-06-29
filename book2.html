@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="Information Management, Strategy and Practice, Robert D. Galliers, PSB Library, Book Collection" />
+  <meta name="description" content="Information Management Strategy and Practice by Robert D. Galliers - Available at Perpustakaan Sultan Badlishah" />
+  <meta name="author" content="Group 254 - IML254" />
+  <title>Book 2 - Information Management Strategy and Practice | PSB Book Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style type="text/css">
+
+    /* ── BREADCRUMB ── */
+    #breadcrumb {
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 40px;
+      font-size: 13px;
+      color: #666;
+    }
+    #breadcrumb a { color: #333; text-decoration: none; }
+    #breadcrumb a:hover { text-decoration: underline; }
+    #breadcrumb span { margin: 0 8px; color: #aaa; }
+    #breadcrumb strong { color: #111; }
+
+    /* ── BOOK PAGE WRAPPER ── */
+    #book-page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 40px 50px;
+      display: flex;
+      gap: 35px;
+      align-items: flex-start;
+    }
+
+    /* ── LEFT: SLIDESHOW GALLERY ── */
+    #gallery {
+      width: 300px;
+      flex-shrink: 0;
+    }
+
+    /* SLIDESHOW BOX */
+    #slideshow-wrap {
+      position: relative;
+      width: 300px;
+      height: 380px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background: #111;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+    .slide.active-slide {
+      display: block;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Fade animation */
+    .slide {
+      animation: fadeSlide 0.6s ease-in-out;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Prev / Next arrows */
+    .slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      padding: 10px 14px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .slide-arrow:hover { background: rgba(0,0,0,0.75); }
+    #prev-btn { left: 0; }
+    #next-btn { right: 0; }
+
+    /* Dot indicators */
+    #slide-dots {
+      text-align: center;
+      padding: 8px 0 4px;
+    }
+    .dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .dot.active-dot { background: #111; }
+
+    /* Thumbnails below */
+    #thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .thumb {
+      width: 89px;
+      height: 75px;
+      object-fit: cover;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: border-color 0.2s, opacity 0.2s;
+    }
+    .thumb:hover { border-color: #555; opacity: 0.85; }
+    .thumb.active { border: 2px solid #111; }
+
+    /* ── MIDDLE: BOOK DETAILS ── */
+    #book-details {
+      flex: 1;
+      min-width: 0;
+    }
+    .book-badge {
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    #book-details h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    #book-details .subtitle {
+      font-size: 13.5px;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    #book-details .author {
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #111;
+      margin-bottom: 20px;
+    }
+
+    .book-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
+    }
+    .book-info-table tr td {
+      padding: 9px 0;
+      font-size: 13.5px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    .book-info-table tr td:first-child {
+      color: #888;
+      width: 160px;
+      font-weight: 600;
+    }
+    .book-info-table tr td:last-child {
+      color: #222;
+      font-weight: 500;
+    }
+    .info-icon { font-size: 15px; color: #666; margin-right: 7px; }
+
+    #book-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-check {
+      background-color: #111; color: #fff; border: 2px solid #111;
+      padding: 12px 22px; font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .btn-check:hover { background-color: #333; }
+    .btn-fav {
+      background-color: #fff; color: #111; border: 2px solid #111;
+      padding: 12px 22px; font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .btn-fav:hover { background-color: #111; color: #fff; }
+
+    /* ── RIGHT COLUMN ── */
+    #right-col {
+      width: 230px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    #at-a-glance {
+      border: 1px solid #ddd;
+      padding: 20px;
+    }
+    #at-a-glance h4, #quick-links h4 {
+      font-size: 12px; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; color: #111; margin-bottom: 18px;
+    }
+    .glance-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px;
+    }
+    .glance-row:last-child { border-bottom: none; }
+    .glance-label { color: #888; }
+    .glance-value { font-weight: 700; color: #111; font-size: 12.5px; text-align: right; }
+
+    #quick-links { border: 1px solid #ddd; padding: 18px 20px; }
+    .ql-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px;
+      color: #333; text-decoration: none; cursor: pointer; transition: color 0.2s;
+    }
+    .ql-item:hover { color: #000; font-weight: 600; }
+    .ql-item:last-child { border-bottom: none; }
+    .ql-arrow { color: #aaa; font-size: 14px; }
+    /* Highlight TOC link */
+    .ql-item.toc-link { color: #0055aa; }
+    .ql-item.toc-link:hover { color: #003388; }
+
+    /* ── TOC MODAL ── */
+    #toc-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.70);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #toc-modal.open { display: flex; }
+    #toc-box {
+      background: #fff;
+      max-width: 600px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      padding: 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+    #toc-header {
+      background: #111;
+      color: #fff;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #toc-header h3 { font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; margin: 0; }
+    #toc-close {
+      background: none; border: none; color: #fff;
+      font-size: 22px; cursor: pointer; line-height: 1;
+    }
+    #toc-img-wrap {
+      padding: 0;
+      text-align: center;
+      background: #f5f5f5;
+    }
+    #toc-img-wrap img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+    #toc-caption {
+      padding: 12px 20px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+
+    /* ── BOTTOM SECTION ── */
+    #book-bottom { border-top: 2px solid #e0e0e0; margin: 0 40px; padding: 35px 0; }
+    #bottom-cols { display: flex; gap: 0; border: 1px solid #e0e0e0; }
+    .bottom-col { flex: 1; padding: 28px 30px; border-right: 1px solid #e0e0e0; }
+    .bottom-col:last-child { border-right: none; }
+    .bottom-col h4 {
+      font-size: 12px; font-weight: 900; letter-spacing: 2px;
+      text-transform: uppercase; color: #111; margin-bottom: 16px;
+    }
+    .bottom-col p { font-size: 13.5px; color: #555; line-height: 1.8; }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li {
+      font-size: 13.5px; color: #444; padding: 6px 0;
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .feature-list li::before { content: "✔"; color: #111; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    #related-books-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .related-book { width: 85px; text-align: center; }
+    .related-book img {
+      width: 85px; height: 110px; object-fit: cover;
+      border: 1px solid #ddd; display: block; background: #ccc;
+      transition: opacity 0.2s;
+    }
+    .related-book img:hover { opacity: 0.8; }
+
+    /* ── PREV / NEXT ── */
+    #book-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      margin: 0 40px 30px; border: 1px solid #e0e0e0; padding: 16px 25px;
+      font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    #book-nav a { color: #333; text-decoration: none; transition: color 0.2s; }
+    #book-nav a:hover { color: #000; }
+
+    /* ── BIG FOOTER ── */
+    #big-footer {
+      background-color: #111; color: #aaa;
+      display: flex; gap: 0; padding: 40px;
+    }
+    .footer-col { flex: 1; padding-right: 30px; border-right: 1px solid #2a2a2a; margin-right: 30px; }
+    .footer-col:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .footer-col h5 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
+    .footer-col p { font-size: 13px; line-height: 1.8; color: #888; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: #888; text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .subscribe-row { display: flex; margin-top: 5px; border: 1px solid #444; }
+    .subscribe-row input { flex: 1; background: transparent; border: none; color: #aaa; padding: 9px 12px; font-size: 13px; outline: none; }
+    .subscribe-row input::-webkit-input-placeholder { color: #666; }
+    .subscribe-row button { background: #444; border: none; color: #fff; padding: 9px 14px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+    .subscribe-row button:hover { background: #666; }
+
+    #social-icons a { color: #fff; font-size: 15px; text-decoration: none; margin-left: 10px; }
+    #social-icons a:hover { color: #ccc; }
+
+  </style>
+</head>
+<body>
+
+ 
+  <!-- HEADER -->
+  <div id="header">
+    <div id="header-inner">
+      <div id="logo-area">
+        <img src="logogroup.png" alt="PSB Library Logo" id="logo-img" />
+        <div id="site-title">
+          <h1>PRISMA HUB<br />BOOK COLLECTION</h1>
+          <p>Knowledge &bull; Access &bull; Excellence</p>
+        </div>
+      </div>
+      <nav id="navbar">
+        <ul id="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown nav-active">
+            <a href="#">BOOK COLLECTION &#9660;</a>
+            <ul class="dropdown">
+              <li><a href="book1.html">Metadata</a></li>
+              <li><a href="book2.html">Metadata for Digital Collections: A how-to-do-it manual</a></li>
+              <li><a href="book3.html">Continuing Professional Development: A Guide for Information Professionals</a></li>
+              <li><a href="book4.html">Delivering Web Reference Services to Young People</a></li>
+              <li><a href="book5.html">Information Literacy Programs: Successes and Challenges</a></li>
+              <li><a href="book6.html">Career paths and Career Development of Business librarians</a></li>
+              <li><a href="book7.html">Library Classification</a></li>
+              <li><a href="book8.html">Metadata for Digital Resources</a></li>
+              <li><a href="book9.html">Research Methods in Information</a></li>
+              <li><a href="book10.html">Fundamentals of Managing Reference Collections</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="disclaimer.html">DISCLAIMER</a></li>
+          <li><a href="group.html">GROUP</a></li>
+<li id="search-area">
+  <span id="search-icon">&#128269;</span>
+  <input type="text" id="searchInput" placeholder="Search books..." />
+  <div id="searchResults"></div>
+</li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div id="breadcrumb">
+    <a href="index.html">&#127968; Home</a>
+    <span>&#9658;</span>
+    <a href="book1.html">Book Collection</a>
+    <span>&#9658;</span>
+    <strong>Book 2</strong>
+  </div>
+
+  <!-- MAIN BOOK PAGE -->
+  <div id="book-page">
+
+    <!-- LEFT: AUTO SLIDESHOW GALLERY -->
+    <div id="gallery">
+
+      <div id="slideshow-wrap">
+        <!-- Slide 1 -->
+        <div class="slide active-slide">
+          <img src="book2.png" alt="Book 2 - Front Cover" />
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <img src="book22.png" alt="Book 2 - View 2" />
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+          <img src="book222.png" alt="Book 2 - Table of Contents" />
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+          <img src="book2222.png" alt="Book 2 - Inside Page" />
+        </div>
+        <!-- Slide 5 -->
+        <div class="slide">
+          <img src="book22222.png" alt="Book 2 - Spine View" />
+        </div>
+
+        <!-- Arrows -->
+        <button class="slide-arrow" id="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slide-arrow" id="next-btn" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+
+      <!-- Dots -->
+      <div id="slide-dots">
+        <span class="dot active-dot" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+      </div>
+
+      <!-- Thumbnails -->
+      <div id="thumbnails">
+        <img src="book2.png"     alt="Cover"    class="thumb active" onclick="goToSlide(0)" />
+        <img src="book22.png"    alt="View 2"   class="thumb"        onclick="goToSlide(1)" />
+        <img src="book222.png"   alt="TOC"      class="thumb"        onclick="goToSlide(2)" />
+        <img src="book2222.png"  alt="Inside"   class="thumb"        onclick="goToSlide(3)" />
+        <img src="book22222.png" alt="Spine"    class="thumb"        onclick="goToSlide(4)" />
+      </div>
+    </div>
+
+    <!-- MIDDLE: BOOK DETAILS -->
+    <div id="book-details">
+      <span class="book-badge">BOOK 2</span>
+      <h2>Metadata for digital collections: a how-to-do-it manual</h2>
+      <p class="author">Miller, Steven Jack</p>
+
+      <table class="book-info-table">
+        <tr>
+          <td><span class="info-icon">&#128197;</span> Publication Year</td>
+          <td>2022</td>
+        </tr>
+        <tr>
+          <td><span class="info-icon">&#127970;</span> Publisher</td>
+          <td>United States, America : ALA Neal-Schuman</td>
+        </tr>
+        <tr>
+          <td><span class="info-icon">&#128218;</span> Call Number</td>
+          <td>Z695.24 .M55 2022</td>
+        </tr>
+        <tr>
+          <td><span class="info-icon">&#128211;</span> ISBN</td>
+          <td>9780838947487</td>
+        </tr>
+        <tr>
+          <td><span class="info-icon">&#127991;</span> Abstract</td>
+          <td>Designed as both a graduate-level textbook and a practical guide for practitioners in cultural heritage institutions, this manual breaks down the technicalities of describing born-digital or digitized objects (images, audio, video, and text). It heavily emphasizes a "metadata-is-data" approach, building up from basic descriptive practices to structural schemas and data-sharing workflows. It provides deeply illustrated chapters on Dublin Core, MODS, VRA Core, XML structures, controlled vocabularies, and a comprehensive overview of how linked data ontologies shape modern collection discoverability and interoperability.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div id="right-col">
+
+      <!-- AT A GLANCE -->
+      <div id="at-a-glance">
+        <h4>AT A GLANCE</h4>
+        <div class="glance-row">
+          <span class="glance-label">&#128196; Pages</span>
+          <span class="glance-value">505 pages</span>
+        </div>
+        <div class="glance-row">
+          <span class="glance-label">A Language</span>
+          <span class="glance-value">English</span>
+        </div>
+        <div class="glance-row">
+          <span class="glance-label">&#128248; Format</span>
+          <span class="glance-value">Print</span>
+        </div>
+        <div class="glance-row">
+          <span class="glance-label">&#128100; Notes</span>
+          <span class="glance-value">Includes bibliographical references and index</span>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div id="quick-links">
+        <h4>QUICK LINKS</h4>
+        <a href="#description" class="ql-item">Description <span class="ql-arrow">&#8250;</span></a>
+        <a href="#" class="ql-item toc-link" onclick="openTOC(); return false;">Table of Contents <span class="ql-arrow">&#8250;</span></a>
+        <a href="#related" class="ql-item">Related Books <span class="ql-arrow">&#8250;</span></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS MODAL -->
+  <div id="toc-modal" onclick="closeTOCOutside(event)">
+    <div id="toc-box">
+      <div id="toc-header">
+        <h3>&#128196; Table of Contents</h3>
+        <button id="toc-close" onclick="closeTOC()">&#10005;</button>
+      </div>
+      <div id="toc-img-wrap">
+        <!-- Point this to your TOC image - book111.png is the TOC photo -->
+        <img src="book22222.png" alt="Table of Contents" />
+      </div>
+      <div id="toc-caption">Table of Contents &mdash;Metadata for digital collections: a how-to-do-it manual</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SECTION -->
+  <div id="book-bottom">
+    <div id="bottom-cols">
+
+      <div class="bottom-col" id="description">
+        <h4>DESCRIPTION</h4>
+        <p>"This authoritative manual introduces readers to fundamental concepts and practices in a style accessible to beginners and LIS students as well as experienced practitioners with little formal metadata training"-- |c Provided by publisher.</p>
+      </div>
+
+      <div class="bottom-col" id="related">
+        <h4>RELATED BOOKS</h4>
+        <div id="related-books-row">
+          <div class="related-book"><a href="book2.html"><img src="book2.png" alt="Book 2" /></a></div>
+          <div class="related-book"><a href="book3.html"><img src="book3.png" alt="Book 3" /></a></div>
+          <div class="related-book"><a href="book4.html"><img src="book4.png" alt="Book 4" /></a></div>
+          <div class="related-book"><a href="book5.html"><img src="book5.png" alt="Book 5" /></a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PREV / NEXT -->
+  <div id="book-nav">
+    <a href="book1.html">&lsaquo; PREVIOUS BOOK</a>
+    <a href="book3.html">NEXT BOOK &rsaquo;</a>
+  </div>
+
+  <!-- BIG FOOTER -->
+  <div id="big-footer" style="background:#111;color:#aaa;display:flex;padding:40px;">
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">ABOUT THIS PROJECT</h5>
+      <p style="font-size:13px;line-height:1.8;color:#888;">This website presents ten Information Management books available in Perpustakaan Sultan Badlishah. This project is for academic purposes only.</p>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">USEFUL LINKS</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="https://library.uitm.edu.my/kedah" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">Perpustakaan Sultan Badlishah</a></li>
+        <li style="margin-bottom:10px;"><a href="https://www.uitm.edu.my/en/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">UiTM Official Website</a></li>
+        <li style="margin-bottom:10px;"><a href="https://permata.uitm.edu.my/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">PTAR Portal</a></li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">SUPPORT</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="faqs.html" style="color:#888;text-decoration:none;font-size:13px;">FAQs</a></li>
+        <li style="margin-bottom:10px;"><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="feedback.html" style="color:#888;text-decoration:none;font-size:13px;">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <span>&copy; 2026 PRISMA HUB BOOK COLLECTION. All Rights Reserved.</span>
+    <span class="footer-sep">|</span><span>Last Updated: 29 June 2026</span>
+    <span class="footer-sep">|</span><span>Recommended Browser: Chrome, Firefox, Edge</span>
+    <span class="footer-sep">|</span><span>Resolution: 1366 x 768 and above</span>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script type="text/javascript">
+
+    // ── AUTO SLIDESHOW ──
+    var currentSlide = 0;
+    var slides = document.querySelectorAll('.slide');
+    var dots   = document.querySelectorAll('.dot');
+    var thumbs = document.querySelectorAll('.thumb');
+    var timer;
+
+    function showSlide(n) {
+      // Remove active from all
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].className = 'slide';
+        dots[i].className   = 'dot';
+        thumbs[i].className = 'thumb';
+      }
+      // Wrap around
+      if (n >= slides.length) n = 0;
+      if (n < 0) n = slides.length - 1;
+      currentSlide = n;
+      slides[currentSlide].className = 'slide active-slide';
+      dots[currentSlide].className   = 'dot active-dot';
+      thumbs[currentSlide].className = 'thumb active';
+    }
+
+    function changeSlide(dir) {
+      clearInterval(timer);
+      showSlide(currentSlide + dir);
+      startAuto();
+    }
+
+    function goToSlide(n) {
+      clearInterval(timer);
+      showSlide(n);
+      startAuto();
+    }
+
+    function startAuto() {
+      timer = setInterval(function() {
+        showSlide(currentSlide + 1);
+      }, 3000); // change every 3 seconds
+    }
+
+    // Start on load
+    startAuto();
+
+    // ── TABLE OF CONTENTS MODAL ──
+    function openTOC() {
+      document.getElementById('toc-modal').className = 'open';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTOC() {
+      document.getElementById('toc-modal').className = '';
+      document.body.style.overflow = '';
+    }
+
+    function closeTOCOutside(e) {
+      if (e.target.id === 'toc-modal') {
+        closeTOC();
+      }
+    }
+
+    // ESC key closes modal
+    document.onkeydown = function(e) {
+      if (e.keyCode === 27) { closeTOC(); }
+    };
+
+  </script>
+<script>
+  var booksData = [
+    { title: "Metadata", file: "book1.html" },
+    { title: "Metadata for Digital Collections: A how-to-do-it manual", file: "book2.html" },
+    { title: "Continuing Professional Development: A Guide for Information Professionals", file: "book3.html" },
+    { title: "Delivering Web Reference Services to Young People", file: "book4.html" },
+    { title: "Information Literacy Programs: Successes and Challenges", file: "book5.html" },
+    { title: "Career paths and Career Development of Business librarians", file: "book6.html" },
+    { title: "Library Classification", file: "book7.html" },
+    { title: "Metadata for Digital Resources", file: "book8.html" },
+    { title: "Research Methods in Information", file: "book9.html" },
+    { title: "Fundamentals of Managing Reference Collections", file: "book10.html" }
+  ];
+
+  var icon = document.getElementById('search-icon');
+  var input = document.getElementById('searchInput');
+  var resultsDiv = document.getElementById('searchResults');
+
+  icon.addEventListener('click', function() {
+    input.classList.toggle('show');
+    input.focus();
+  });
+
+  function renderResults(list) {
+    if (list.length === 0) {
+      resultsDiv.innerHTML = "<p style='color:#555;padding:8px;'>No books found.</p>";
+    } else {
+      var html = list.map(book => `<a href="${book.file}">${book.title}</a>`).join('');
+      resultsDiv.innerHTML = html;
+    }
+    resultsDiv.classList.add('show');
+  }
+
+  function doSearch() {
+    var keyword = input.value.trim().toLowerCase();
+    if (keyword === "") {
+      resultsDiv.classList.remove('show');
+      return;
+    }
+    var filtered = booksData.filter(book => book.title.toLowerCase().includes(keyword));
+    renderResults(filtered);
+  }
+
+  input.addEventListener('input', doSearch);
+</script>
+
+</body>
+</html>

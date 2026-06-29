@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="About Project, IML254, Information Management, PSB Library, Web Content Development" />
+  <meta name="description" content="About the PSB Information Management Book Collection project developed for IML254." />
+  <meta name="author" content="Group 254 - IML254" />
+  <title>About Project | PSB Information Management Book Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style type="text/css">
+
+    /* ── HERO BANNER ── */
+    #about-hero {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background-color: #111;
+    }
+    #about-hero-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.40;
+      display: block;
+    }
+    #about-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 70px;
+    }
+    #about-hero-text h2 {
+      font-size: 42px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    #about-hero-hr {
+      border: none;
+      border-top: 3px solid #ffffff;
+      width: 240px;
+      margin: 0 0 18px 0;
+    }
+    #about-hero-text h3 {
+      font-size: 19px;
+      font-weight: 600;
+      color: #eeeeee;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    #about-hero-text p {
+      font-size: 13.5px;
+      color: #bbbbbb;
+      line-height: 1.7;
+    }
+
+    /* Book icon SVG */
+    #hero-book-icon { opacity: 0.85; }
+
+    /* ── PAGE WRAPPER ── */
+    .about-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 55px 50px;
+    }
+
+    /* ── SECTION HEADING ── */
+    .sec-heading {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+    .sec-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: #999;
+      letter-spacing: 1px;
+      padding-right: 18px;
+      border-right: 2px solid #ccc;
+      line-height: 1;
+    }
+    .sec-title {
+      font-size: 23px;
+      font-weight: 900;
+      color: #111;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* ── DIVIDER LINE ── */
+    .page-divider {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 0;
+    }
+
+    /* ── 01 PROJECT OVERVIEW ── */
+    #overview-row {
+      display: flex;
+      gap: 55px;
+      align-items: flex-start;
+    }
+    #overview-img {
+      width: 420px;
+      flex-shrink: 0;
+    }
+    #overview-img img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #ddd;
+    }
+    #overview-text p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+    #overview-text p:last-child { margin-bottom: 0; }
+
+    /* ── 02 OBJECTIVES ── */
+    #objectives-grid {
+      display: flex;
+      border: 1px solid #e0e0e0;
+    }
+    .obj-box {
+      flex: 1;
+      text-align: center;
+      padding: 40px 22px;
+      border-right: 1px solid #e0e0e0;
+    }
+    .obj-box:last-child { border-right: none; }
+    .obj-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .obj-box h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #111;
+      margin-bottom: 12px;
+    }
+    .obj-box p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ── 03 PROJECT FEATURES ── */
+    #features-wrap { background: #fafafa; }
+    #features-grid {
+      display: flex;
+      gap: 18px;
+    }
+    .feat-box {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 24px 20px;
+    }
+    .feat-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #111;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feat-text h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .feat-text p {
+      font-size: 12.5px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ── 04 DEVELOPMENT PROCESS ── */
+    #process-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .proc-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 6px;
+    }
+    .proc-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background-color: #111;
+      color: #fff;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .proc-arrow {
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 22px;
+      color: #333;
+    }
+    .proc-arrow svg { display: block; }
+    .proc-item h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .proc-item p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ── INFOBAR ── */
+    #about-infobar {
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 40px 70px;
+      gap: 50px;
+    }
+    #infobar-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      flex: 1.4;
+    }
+    #infobar-i {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      margin-top: 2px;
+    }
+    #infobar-body h4 {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    #infobar-body p {
+      font-size: 13px;
+      color: #999;
+      line-height: 1.8;
+      max-width: 500px;
+    }
+    #infobar-divider {
+      width: 1px;
+      background: #333;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+    #infobar-quote {
+      flex: 1;
+      padding-left: 20px;
+    }
+    #quote-marks {
+      font-size: 28px;
+      color: #555;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    #infobar-quote p {
+      font-size: 17px;
+      font-style: italic;
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    /* ── BIG FOOTER ── */
+    #big-footer {
+      background-color: #111; color: #aaa;
+      display: flex; padding: 40px;
+    }
+    .footer-col { flex: 1; padding-right: 30px; border-right: 1px solid #2a2a2a; margin-right: 30px; }
+    .footer-col:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .footer-col h5 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
+    .footer-col p { font-size: 13px; line-height: 1.8; color: #888; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: #888; text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .subscribe-row { display: flex; margin-top: 8px; border: 1px solid #444; }
+    .subscribe-row input { flex: 1; background: transparent; border: none; color: #aaa; padding: 9px 12px; font-size: 13px; outline: none; }
+    .subscribe-row input::-webkit-input-placeholder { color: #555; }
+    .subscribe-row button { background: #444; border: none; color: #fff; padding: 9px 14px; cursor: pointer; font-size: 15px; transition: background 0.2s; }
+    .subscribe-row button:hover { background: #666; }
+
+  </style>
+</head>
+<body>
+
+  
+  <!-- HEADER -->
+  <div id="header">
+    <div id="header-inner">
+      <div id="logo-area">
+        <img src="logogroup.png" alt="PSB Library Logo" id="logo-img" />
+        <div id="site-title">
+          <h1>PRISMA HUB<br />BOOK COLLECTION</h1>
+          <p>Knowledge &bull; Access &bull; Excellence</p>
+        </div>
+      </div>
+      <nav id="navbar">
+        <ul id="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li class="nav-active"><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown">
+            <a href="#">BOOK COLLECTION &#9660;</a>
+            <ul class="dropdown">
+              <li><a href="book1.html">Metadata</a></li>
+              <li><a href="book2.html">Metadata for Digital Collections: A how-to-do-it manual</a></li>
+              <li><a href="book3.html">Continuing Professional Development: A Guide for Information Professionals</a></li>
+              <li><a href="book4.html">Delivering Web Reference Services to Young People</a></li>
+              <li><a href="book5.html">Information Literacy Programs: Successes and Challenges</a></li>
+              <li><a href="book6.html">Career paths and Career Development of Business librarians</a></li>
+              <li><a href="book7.html">Library Classification</a></li>
+              <li><a href="book8.html">Metadata for Digital Resources</a></li>
+              <li><a href="book9.html">Research Methods in Information</a></li>
+              <li><a href="book10.html">Fundamentals of Managing Reference Collections</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="disclaimer.html">DISCLAIMER</a></li>
+          <li><a href="group.html">GROUP</a></li>
+<li id="search-area">
+  <span id="search-icon">&#128269;</span>
+  <input type="text" id="searchInput" placeholder="Search books..." />
+  <div id="searchResults"></div>
+</li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div id="about-hero">
+    <img src="banner.png" alt="About Project Banner" id="about-hero-bg" />
+    <div id="about-hero-content">
+      <div id="about-hero-text">
+        <h2>ABOUT US</h2>
+        <hr id="about-hero-hr" />
+        <h3>Discovering Information Management<br />Resources in PSB Library</h3>
+        <p>At Prisma Hub, we bridge the gap between complex research and academic excellence by disseminating vital information resources to higher education institutions.</p>
+      </div>
+      <div id="hero-book-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 175" width="190" height="170">
+          <g fill="none" stroke="white" stroke-width="5.5" stroke-linejoin="round">
+            <path d="M100 28 L18 65 L18 158 L100 126 L182 158 L182 65 Z"/>
+            <line x1="100" y1="28" x2="100" y2="126"/>
+            <line x1="33" y1="85"  x2="88"  y2="70"/>
+            <line x1="33" y1="100" x2="88"  y2="87"/>
+            <line x1="33" y1="115" x2="88"  y2="104"/>
+            <line x1="112" y1="70"  x2="167" y2="85"/>
+            <line x1="112" y1="87"  x2="167" y2="100"/>
+            <line x1="112" y1="104" x2="167" y2="115"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 01 PROJECT OVERVIEW ══ -->
+  <div class="about-wrap">
+    <div class="sec-heading">
+      <span class="sec-num">01</span>
+      <span class="sec-title">OUR COMPANY</span>
+    </div>
+    <div id="overview-row">
+      <div id="overview-img">
+        <img src="aboutproject.png" alt="Information Management Books at PSB Library" />
+      </div>
+      <div id="overview-text">
+        <p>Prisma Hub Book Collection serves as a premier professional repository dedicated to disseminating authoritative academic literature and essential reference texts across Malaysia.</p>
+        <p>Each book is carefully selected to support learning, teaching, and research in the field of Information Management.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="page-divider" />
+
+  <!-- ══ 02 OBJECTIVES ══ -->
+  <div class="about-wrap">
+    <div class="sec-heading">
+      <span class="sec-num">02</span>
+      <span class="sec-title">OBJECTIVES</span>
+    </div>
+    <div id="objectives-grid">
+
+      <div class="obj-box">
+        <div class="obj-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="58" height="58">
+            <circle cx="30" cy="30" r="20" fill="none" stroke="#111" stroke-width="3"/>
+            <circle cx="30" cy="30" r="11" fill="none" stroke="#111" stroke-width="2.5"/>
+            <circle cx="30" cy="30" r="4"  fill="#111"/>
+            <line x1="30" y1="10" x2="30" y2="16" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+            <line x1="44" y1="16" x2="40" y2="20" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="44" y1="18" x2="36" y2="22" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>OBJECTIVE 1</h4>
+        <p>To provide information about Information Management books.</p>
+      </div>
+
+      <div class="obj-box">
+        <div class="obj-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="58" height="58">
+            <rect x="10" y="8" width="38" height="46" rx="2" fill="none" stroke="#111" stroke-width="3"/>
+            <line x1="19" y1="8" x2="19" y2="54" stroke="#111" stroke-width="2.5"/>
+            <line x1="25" y1="20" x2="40" y2="20" stroke="#111" stroke-width="2"/>
+            <line x1="25" y1="28" x2="40" y2="28" stroke="#111" stroke-width="2"/>
+            <line x1="25" y1="36" x2="40" y2="36" stroke="#111" stroke-width="2"/>
+          </svg>
+        </div>
+        <h4>OBJECTIVE 2</h4>
+        <p>To promote and increase awareness of library resources.</p>
+      </div>
+
+      <div class="obj-box">
+        <div class="obj-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="58" height="58">
+            <polygon points="30,8 5,22 30,35 55,22" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M14 28 L14 43 Q30 51 46 43 L46 28" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="55" y1="22" x2="55" y2="38" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+            <line x1="52" y1="38" x2="58" y2="38" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>OBJECTIVE 3</h4>
+        <p>To support student learning, research, and academic success.</p>
+      </div>
+
+      <div class="obj-box">
+        <div class="obj-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="58" height="58">
+            <rect x="6" y="10" width="48" height="32" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+            <rect x="11" y="15" width="38" height="22" rx="1" fill="none" stroke="#111" stroke-width="1.5"/>
+            <line x1="22" y1="42" x2="38" y2="42" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+            <line x1="15" y1="48" x2="45" y2="48" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>OBJECTIVE 4</h4>
+        <p>To apply web development skills using XHTML and CSS.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="page-divider" />
+
+  <!-- ══ 03 PROJECT FEATURES ══ -->
+  <div class="about-wrap" id="features-wrap">
+    <div class="sec-heading">
+      <span class="sec-num">03</span>
+      <span class="sec-title">PROJECT FEATURES</span>
+    </div>
+    <div id="features-grid">
+
+      <div class="feat-box">
+        <div class="feat-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="24" height="24">
+            <rect x="4" y="2" width="22" height="26" rx="2" fill="none" stroke="#111" stroke-width="2.2"/>
+            <line x1="9" y1="9"  x2="21" y2="9"  stroke="#111" stroke-width="1.8"/>
+            <line x1="9" y1="14" x2="21" y2="14" stroke="#111" stroke-width="1.8"/>
+            <line x1="9" y1="19" x2="16" y2="19" stroke="#111" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div class="feat-text">
+          <h4>BOOK INFORMATION</h4>
+          <p>Detailed information for each selected book including title, author, publisher, and subjects.</p>
+        </div>
+      </div>
+
+      <div class="feat-box">
+        <div class="feat-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="24" height="24">
+            <rect x="2" y="4" width="26" height="20" rx="2" fill="none" stroke="#111" stroke-width="2.2"/>
+            <rect x="6" y="8" width="8" height="8" rx="1" fill="none" stroke="#111" stroke-width="1.8"/>
+            <line x1="17" y1="10" x2="24" y2="10" stroke="#111" stroke-width="1.8"/>
+            <line x1="17" y1="14" x2="24" y2="14" stroke="#111" stroke-width="1.8"/>
+            <line x1="6"  y1="19" x2="24" y2="19" stroke="#111" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="feat-text">
+          <h4>BOOK GALLERY</h4>
+          <p>Multiple images of each book including front cover, back cover, and contents preview.</p>
+        </div>
+      </div>
+
+      <div class="feat-box">
+        <div class="feat-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="24" height="24">
+            <polygon points="6,15 20,6 20,24" fill="#111"/>
+            <line x1="22" y1="7" x2="22" y2="23" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="26" y1="9" x2="26" y2="21" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="feat-text">
+          <h4>EASY NAVIGATION</h4>
+          <p>User-friendly design and clear layout for easy browsing and better experience.</p>
+        </div>
+      </div>
+
+      <div class="feat-box">
+        <div class="feat-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="24" height="24">
+            <circle cx="8"  cy="15" r="4" fill="none" stroke="#111" stroke-width="2"/>
+            <circle cx="22" cy="8"  r="4" fill="none" stroke="#111" stroke-width="2"/>
+            <circle cx="22" cy="22" r="4" fill="none" stroke="#111" stroke-width="2"/>
+            <line x1="12" y1="13" x2="18" y2="10" stroke="#111" stroke-width="1.8"/>
+            <line x1="12" y1="17" x2="18" y2="20" stroke="#111" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div class="feat-text">
+          <h4>EXTERNAL LINKS</h4>
+          <p>Links to related resources and references for further reading and research.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="page-divider" />
+
+  <!-- ══ 04 DEVELOPMENT PROCESS ══ -->
+  <div class="about-wrap">
+    <div class="sec-heading">
+      <span class="sec-num">04</span>
+      <span class="sec-title">DEVELOPMENT PROCESS</span>
+    </div>
+
+    <div id="process-row">
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <rect x="6" y="4" width="20" height="24" rx="2" fill="none" stroke="white" stroke-width="2"/>
+            <line x1="10" y1="10" x2="22" y2="10" stroke="white" stroke-width="1.8"/>
+            <line x1="10" y1="15" x2="22" y2="15" stroke="white" stroke-width="1.8"/>
+            <line x1="10" y1="20" x2="17" y2="20" stroke="white" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h4>PLANNING</h4>
+        <p>Define the project scope, objectives, and content structure.</p>
+      </div>
+
+      <div class="proc-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18">
+          <polyline points="6,4 14,10 6,16" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <circle cx="14" cy="13" r="7" fill="none" stroke="white" stroke-width="2"/>
+            <line x1="19" y1="18" x2="26" y2="25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>ANALYSIS</h4>
+        <p>Gather and analyze information about the selected books.</p>
+      </div>
+
+      <div class="proc-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18">
+          <polyline points="6,4 14,10 6,16" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <path d="M6 22 L18 10 L22 14 L10 26 Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="16" y1="8" x2="24" y2="8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="20" y1="5" x2="20" y2="11" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>DESIGN</h4>
+        <p>Plan the layout, navigation, and user interface using wireframes.</p>
+      </div>
+
+      <div class="proc-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18">
+          <polyline points="6,4 14,10 6,16" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <polyline points="10,10 6,16 10,22" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,10 26,16 22,22" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="14" y1="22" x2="18" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>DEVELOPMENT</h4>
+        <p>Build the website using XHTML for structure and CSS for styling.</p>
+      </div>
+
+      <div class="proc-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18">
+          <polyline points="6,4 14,10 6,16" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <polyline points="6,16 12,22 26,10" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h4>TESTING</h4>
+        <p>Test all pages, links, and functionality to ensure quality.</p>
+      </div>
+
+      <div class="proc-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18">
+          <polyline points="6,4 14,10 6,16" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="proc-item">
+        <div class="proc-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+            <polyline points="16,22 16,10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="10,16 16,10 22,16" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="8" y1="25" x2="24" y2="25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>PUBLISHING</h4>
+        <p>Deploy the website to GitHub and make it accessible online.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BIG FOOTER -->
+  <div id="big-footer" style="background:#111;color:#aaa;display:flex;padding:40px;">
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">ABOUT THIS PROJECT</h5>
+      <p style="font-size:13px;line-height:1.8;color:#888;">This website presents ten Information Management books available in Perpustakaan Sultan Badlishah. This project is for academic purposes only.</p>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">USEFUL LINKS</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="https://library.uitm.edu.my/kedah" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">Perpustakaan Sultan Badlishah</a></li>
+        <li style="margin-bottom:10px;"><a href="https://www.uitm.edu.my/en/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">UiTM Official Website</a></li>
+        <li style="margin-bottom:10px;"><a href="https://permata.uitm.edu.my/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">PTAR Portal</a></li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">SUPPORT</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="faqs.html" style="color:#888;text-decoration:none;font-size:13px;">FAQs</a></li>
+        <li style="margin-bottom:10px;"><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="feedback.html" style="color:#888;text-decoration:none;font-size:13px;">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <span>&copy; 2026 PRISMA HUB BOOK COLLECTION. All Rights Reserved.</span>
+    <span class="footer-sep">|</span><span>Last Updated: 29 June 2026</span>
+    <span class="footer-sep">|</span><span>Recommended Browser: Chrome, Firefox, Edge</span>
+    <span class="footer-sep">|</span><span>Resolution: 1366 x 768 and above</span>
+  </div>
+
+<script>
+  var booksData = [
+    { title: "Metadata", file: "book1.html" },
+    { title: "Metadata for Digital Collections: A how-to-do-it manual", file: "book2.html" },
+    { title: "Continuing Professional Development: A Guide for Information Professionals", file: "book3.html" },
+    { title: "Delivering Web Reference Services to Young People", file: "book4.html" },
+    { title: "Information Literacy Programs: Successes and Challenges", file: "book5.html" },
+    { title: "Career paths and Career Development of Business librarians", file: "book6.html" },
+    { title: "Library Classification", file: "book7.html" },
+    { title: "Metadata for Digital Resources", file: "book8.html" },
+    { title: "Research Methods in Information", file: "book9.html" },
+    { title: "Fundamentals of Managing Reference Collections", file: "book10.html" }
+  ];
+
+  var icon = document.getElementById('search-icon');
+  var input = document.getElementById('searchInput');
+  var resultsDiv = document.getElementById('searchResults');
+
+  icon.addEventListener('click', function() {
+    input.classList.toggle('show');
+    input.focus();
+  });
+
+  function renderResults(list) {
+    if (list.length === 0) {
+      resultsDiv.innerHTML = "<p style='color:#555;padding:8px;'>No books found.</p>";
+    } else {
+      var html = list.map(book => `<a href="${book.file}">${book.title}</a>`).join('');
+      resultsDiv.innerHTML = html;
+    }
+    resultsDiv.classList.add('show');
+  }
+
+  function doSearch() {
+    var keyword = input.value.trim().toLowerCase();
+    if (keyword === "") {
+      resultsDiv.classList.remove('show');
+      return;
+    }
+    var filtered = booksData.filter(book => book.title.toLowerCase().includes(keyword));
+    renderResults(filtered);
+  }
+
+  input.addEventListener('input', doSearch);
+</script>
+
+</body>
+</html>

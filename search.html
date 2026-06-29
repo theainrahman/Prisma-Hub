@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="PSB Library, Information Management, Book Collection, UiTM, Perpustakaan Sultan Badlishah" />
+  <meta name="description" content="PSB Information Management Book Collection - A curated selection of 10 essential Information Management books available at Perpustakaan Sultan Badlishah." />
+  <meta name="author" content="Group 254 - IML254" />
+  <title>PSB Information Management Book Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+ 
+  <div id="header">
+    <div id="header-inner">
+      <div id="logo-area">
+        <img src="logogroup.png" alt="PSB Library Logo" id="logo-img" />
+        <div id="site-title">
+          <h1>PRISMA HUB<br />BOOK COLLECTION</h1>
+          <p>Knowledge &bull; Access &bull; Excellence</p>
+        </div>
+      </div>
+
+      <nav id="navbar">
+        <ul id="nav-list">
+          <li class="nav-active"><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown">
+            <a href="#">BOOK COLLECTION &#9660;</a>
+            <ul class="dropdown">
+              <li><a href="book1.html">Metadata</a></li>
+              <li><a href="book2.html">Metadata for Digital Collections: A how-to-do-it manual</a></li>
+              <li><a href="book3.html">Continuing Professional Development: A Guide for Information Professionals</a></li>
+              <li><a href="book4.html">Delivering Web Reference Services to Young People</a></li>
+              <li><a href="book5.html">Information Literacy Programs: Successes and Challenges</a></li>
+              <li><a href="book6.html">Career paths and Career Development of Business librarians</a></li>
+              <li><a href="book7.html">Library Classification</a></li>
+              <li><a href="book8.html">Metadata for Digital Resources</a></li>
+              <li><a href="book9.html">Research Methods in Information</a></li>
+              <li><a href="book10.html">Fundamentals of Managing Reference Collections</a></li>
+            </ul>
+          </li>
+         <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="disclaimer.html">DISCLAIMER</a></li>
+          <li><a href="group.html">GROUP</a></li>
+          <li id="search-icon"><a href="search.html">&#128269;</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <section style="padding:60px 90px; min-height:60vh;">
+    <h1 style="font-weight:800; letter-spacing:0.5px; margin-bottom:8px;">SEARCH BOOKS</h1>
+    <p style="color:#555; margin-bottom:28px;">Cari buku ikut tajuk dalam koleksi kami.</p>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Taip kata kunci... e.g. metadata"
+      style="width:100%; max-width:500px; padding:12px 16px; font-size:14px; border:1px solid #ccc; margin-bottom:30px; box-sizing:border-box;"
+    >
+    <div id="searchResults"></div>
+  </section>
+
+  <script>
+    
+    var booksData = [
+      { title: "Metadata", file: "book1.html" },
+      { title: "Metadata for Digital Collections: A how-to-do-it manual", file: "book2.html" },
+      { title: "Continuing Professional Development: A Guide for Information Professionals", file: "book3.html" },
+      { title: "Delivering Web Reference Services to Young People", file: "book4.html" },
+      { title: "Information Literacy Programs: Successes and Challenges", file: "book5.html" },
+      { title: "Career paths and Career Development of Business librarians", file: "book6.html" },
+      { title: "Library Classification", file: "book7.html" },
+      { title: "Metadata for Digital Resources", file: "book8.html" },
+      { title: "Research Methods in Information", file: "book9.html" },
+      { title: "Fundamentals of Managing Reference Collections", file: "book10.html" }
+    ];
+
+    var input = document.getElementById('searchInput');
+    var resultsDiv = document.getElementById('searchResults');
+
+    function renderResults(list) {
+      if (list.length === 0) {
+        resultsDiv.innerHTML = "<p style='color:#888;'>No Books Found.</p>";
+        return;
+      }
+      var html = "";
+      for (var i = 0; i < list.length; i++) {
+        html += '<div style="padding:16px 0; border-bottom:1px solid #eee;">' +
+                '<a href="' + list[i].file + '" style="font-size:16px; font-weight:600; color:#111; text-decoration:none;">' +
+                list[i].title +
+                '</a></div>';
+      }
+      resultsDiv.innerHTML = html;
+    }
+
+    function doSearch() {
+      var keyword = input.value.trim().toLowerCase();
+      var filtered = [];
+      for (var i = 0; i < booksData.length; i++) {
+        if (booksData[i].title.toLowerCase().indexOf(keyword) !== -1) {
+          filtered.push(booksData[i]);
+        }
+      }
+      renderResults(filtered);
+    }
+
+    input.addEventListener('input', doSearch);
+    doSearch();
+  </script>
+</body>
+</html>
