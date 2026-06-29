@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="FAQs, PSB Library, Information Management, IML254" />
+  <meta name="description" content="Frequently Asked Questions about PSB Book Collection" />
+  <meta name="author" content="Group 254 - IML254" />
+  <title>FAQs | PSB Information Management Book Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style type="text/css">
+    #page-hero { background:#111; padding:55px 70px; position:relative; overflow:hidden; }
+    #page-hero::before { content:""; position:absolute; top:0;left:0;right:0;bottom:0; background:repeating-linear-gradient(45deg,#1a1a1a 0px,#1a1a1a 1px,transparent 1px,transparent 12px); opacity:0.4; }
+    #page-hero-inner { position:relative; z-index:2; }
+    #page-hero h2 { font-size:38px; font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px; }
+    #page-hero hr { border:none; border-top:3px solid #fff; width:120px; margin:0 0 14px 0; }
+    #page-hero p { font-size:14px; color:#bbb; }
+
+    #faqs-wrap { max-width:900px; margin:0 auto; padding:50px; }
+
+    /* ── FAQ ACCORDION ── */
+    #faq-left h3 { font-size:17px; font-weight:900; color:#111; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+    #faq-left p.sub { font-size:13.5px; color:#777; margin-bottom:28px; }
+
+    .faq-item { border:1px solid #e5e5e5; margin-bottom:8px; }
+    .faq-question {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:16px 20px; cursor:pointer; background:#fafafa;
+      font-size:14px; font-weight:700; color:#222;
+      transition:background 0.2s;
+      user-select:none;
+    }
+    .faq-question:hover { background:#f0f0f0; }
+    .faq-question.open { background:#111; color:#fff; }
+    .faq-icon { font-size:18px; font-weight:400; transition:transform 0.3s; flex-shrink:0; margin-left:12px; }
+    .faq-question.open .faq-icon { transform:rotate(45deg); }
+    .faq-answer {
+      display:none; padding:16px 20px; font-size:13.5px; color:#555;
+      line-height:1.8; border-top:1px solid #e5e5e5; background:#fff;
+    }
+    .faq-answer.open { display:block; }
+  </style>
+</head>
+<body>
+   <div id="header">
+    <div id="header-inner">
+      <div id="logo-area">
+        <img src="logogroup.png" alt="PSB Library Logo" id="logo-img" />
+        <div id="site-title">
+          <h1>PRISMA HUB<br />BOOK COLLECTION</h1>
+          <p>Knowledge &bull; Access &bull; Excellence</p>
+        </div>
+      </div>
+      <nav id="navbar">
+        <ul id="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown"><a href="#">BOOK COLLECTION &#9660;</a>
+            <ul class="dropdown">
+              <li><a href="book1.html">Metadata</a></li>
+              <li><a href="book2.html">Metadata for Digital Collections: A how-to-do-it manual</a></li>
+              <li><a href="book3.html">Continuing Professional Development: A Guide for Information Professionals</a></li>
+              <li><a href="book4.html">Delivering Web Reference Services to Young People</a></li>
+              <li><a href="book5.html">Information Literacy Programs: Successes and Challenges</a></li>
+              <li><a href="book6.html">Career paths and Career Development of Business librarians</a></li>
+              <li><a href="book7.html">Library Classification</a></li>
+              <li><a href="book8.html">Metadata for Digital Resources</a></li>
+              <li><a href="book9.html">Research Methods in Information</a></li>
+              <li><a href="book10.html">Fundamentals of Managing Reference Collections</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="disclaimer.html">DISCLAIMER</a></li>
+          <li><a href="group.html">GROUP</a></li>
+          <li id="search-area">
+            <span id="search-icon">&#128269;</span>
+            <input type="text" id="searchInput" placeholder="Search books..." />
+            <div id="searchResults"></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div id="page-hero">
+    <div id="page-hero-inner">
+      <h2>FAQs</h2>
+      <hr />
+      <p>Frequently Asked Questions about our Book Collection</p>
+    </div>
+  </div>
+
+  <div id="faqs-wrap">
+    <!-- ACCORDION FAQs -->
+    <div id="faq-left">
+      <h3>Frequently Asked Questions</h3>
+      <p class="sub">Click on any question below to read the answer.</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What is this website about?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          This website is a digital collection showcase of ten Information Management books available at Perpustakaan Sultan Badlishah (PSB), UiTM. It was developed to help students and researchers discover relevant academic resources.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How many books are featured on this website?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          This website features exactly 10 Information Management books carefully selected from the PSB Library collection. Each book has its own dedicated page with detailed information including title, author, publisher, call number, ISBN, and abstract.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          Can I borrow these books from the library?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! All books featured on this website are available at Perpustakaan Sultan Badlishah (PSB), UiTM Kedah. You can visit the library in person or use the PTAR Portal to check availability and place a reservation. 
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How do I access the PTAR Portal?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          You can access the PTAR Portal directly at <a href="https://permata.uitm.edu.my/" target="_blank" style="color:#111;font-weight:700;">permata.uitm.edu.my</a>. The portal allows UiTM students and staff to search the library catalogue, check book availability, renew loans, and access online databases.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What is Information Management?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Information Management refers to the collection, organization, maintenance, retrieval, and distribution of information within organizations. It involves strategies, systems, and processes that ensure the right information reaches the right people at the right time to support decision-making and organizational goals.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What browser should I use to view this website?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          This website is best viewed on Google Chrome, Mozilla Firefox, or Microsoft Edge at a minimum screen resolution of 1366 x 768 pixels. Some features may not display correctly on older browsers.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How do I give feedback about this website?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We would love to hear from you! Please visit our <a href="feedback.html" style="color:#111;font-weight:700;">Feedback</a> page under the support section to share your thoughts, rate your experience, and help us improve. You can also reach us through the <a href="contact.html" style="color:#111;font-weight:700;">Contact Us</a> page.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="big-footer" style="background:#111;color:#aaa;display:flex;padding:40px;">
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">ABOUT THIS PROJECT</h5>
+      <p style="font-size:13px;line-height:1.8;color:#888;">This website presents ten Information Management books available in Perpustakaan Sultan Badlishah. This project is for academic purposes only.</p>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">USEFUL LINKS</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="https://library.uitm.edu.my/kedah" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">Perpustakaan Sultan Badlishah</a></li>
+        <li style="margin-bottom:10px;"><a href="https://www.uitm.edu.my/en/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">UiTM Official Website</a></li>
+        <li style="margin-bottom:10px;"><a href="https://permata.uitm.edu.my/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">PTAR Portal</a></li>
+      </ul>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">SUPPORT</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="faqs.html" style="color:#888;text-decoration:none;font-size:13px;">FAQs</a></li>
+        <li style="margin-bottom:10px;"><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="feedback.html" style="color:#888;text-decoration:none;font-size:13px;">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <span>&copy; 2026 PRISMA HUB BOOK COLLECTION. All Rights Reserved.</span>
+    <span class="footer-sep">|</span><span>Last Updated: 29 June 2026</span>
+    <span class="footer-sep">|</span><span>Recommended Browser: Chrome, Firefox, Edge</span>
+    <span class="footer-sep">|</span><span>Resolution: 1366 x 768 and above</span>
+  </div>
+
+  <script type="text/javascript">
+    /* ── FAQ ACCORDION ── */
+    function toggleFAQ(el) {
+      var answer = el.nextSibling;
+      while (answer && answer.nodeType !== 1) answer = answer.nextSibling;
+      var isOpen = el.className.indexOf('open') > -1;
+      
+      var allQ = document.querySelectorAll('.faq-question');
+      var allA = document.querySelectorAll('.faq-answer');
+      for (var i=0;i<allQ.length;i++) { 
+        allQ[i].className='faq-question'; 
+        allA[i].className='faq-answer'; 
+      }
+      if (!isOpen) { 
+        el.className='faq-question open'; 
+        answer.className='faq-answer open'; 
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    /* ── LIVE SEARCH FUNCTIONS ── */
+    var booksData = [
+      { title: "Metadata", file: "book1.html" },
+      { title: "Metadata for Digital Collections: A how-to-do-it manual", file: "book2.html" },
+      { title: "Continuing Professional Development: A Guide for Information Professionals", file: "book3.html" },
+      { title: "Delivering Web Reference Services to Young People", file: "book4.html" },
+      { title: "Information Literacy Programs: Successes and Challenges", file: "book5.html" },
+      { title: "Career paths and Career Development of Business librarians", file: "book6.html" },
+      { title: "Library Classification", file: "book7.html" },
+      { title: "Metadata for Digital Resources", file: "book8.html" },
+      { title: "Research Methods in Information", file: "book9.html" },
+      { title: "Fundamentals of Managing Reference Collections", file: "book10.html" }
+    ];
+
+    var icon = document.getElementById('search-icon');
+    var input = document.getElementById('searchInput');
+    var resultsDiv = document.getElementById('searchResults');
+
+    icon.addEventListener('click', function() {
+      input.classList.toggle('show');
+      input.focus();
+    });
+
+    function renderResults(list) {
+      if (list.length === 0) {
+        resultsDiv.innerHTML = "<p style='color:#555;padding:8px;'>No books found.</p>";
+      } else {
+        var html = list.map(book => `<a href="${book.file}">${book.title}</a>`).join('');
+        resultsDiv.innerHTML = html;
+      }
+      resultsDiv.classList.add('show');
+    }
+
+    function doSearch() {
+      var keyword = input.value.trim().toLowerCase();
+      if (keyword === "") {
+        resultsDiv.classList.remove('show');
+        return;
+      }
+      var filtered = booksData.filter(book => book.title.toLowerCase().includes(keyword));
+      renderResults(filtered);
+    }
+
+    input.addEventListener('input', doSearch);
+  </script>
+</body>
+</html>

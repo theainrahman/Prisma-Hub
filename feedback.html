@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="Feedback, PSB Library, IML254" />
+  <meta name="description" content="Share your feedback about the PSB Book Collection website" />
+  <meta name="author" content="Group 254 - IML254" />
+  <title>Feedback | PSB Information Management Book Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style type="text/css">
+    #page-hero { background:#111; padding:55px 70px; position:relative; overflow:hidden; }
+    #page-hero::before { content:""; position:absolute; top:0;left:0;right:0;bottom:0; background:repeating-linear-gradient(45deg,#1a1a1a 0px,#1a1a1a 1px,transparent 1px,transparent 12px); opacity:0.4; }
+    #page-hero-inner { position:relative; z-index:2; }
+    #page-hero h2 { font-size:38px; font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px; }
+    #page-hero hr { border:none; border-top:3px solid #fff; width:180px; margin:0 0 14px 0; }
+    #page-hero p { font-size:14px; color:#bbb; }
+
+    #fb-wrap { max-width:820px; margin:0 auto; padding:55px 50px; }
+    #fb-wrap h3 { font-size:18px; font-weight:900; color:#111; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+    #fb-wrap p.sub { font-size:13.5px; color:#777; margin-bottom:32px; line-height:1.6; }
+
+    #rating-section { margin-bottom:28px; }
+    #rating-section label { display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#333; margin-bottom:12px; }
+    #stars { display:flex; gap:8px; flex-direction:row-reverse; justify-content:flex-end; }
+    #stars input { display:none; }
+    #stars label { font-size:32px; color:#ccc; cursor:pointer; transition:color 0.2s; display:block; letter-spacing:0; text-transform:none; font-weight:400; }
+    #stars input:checked ~ label { color:#111; }
+    #stars label:hover, #stars label:hover ~ label { color:#555; }
+    #star-text { font-size:13px; color:#888; margin-top:8px; }
+
+    .form-group { margin-bottom:18px; }
+    .form-group label { display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#333; margin-bottom:7px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:12px 14px; border:1.5px solid #ddd;
+      font-size:13.5px; color:#333; font-family:Arial,sans-serif;
+      outline:none; transition:border-color 0.2s; box-sizing:border-box; background:#fafafa;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:#111; background:#fff; }
+    .form-group textarea { height:120px; resize:vertical; }
+    .form-row { display:flex; gap:16px; }
+    .form-row .form-group { flex:1; }
+
+    .check-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .check-item { display:flex; align-items:center; gap:8px; font-size:13px; color:#444; cursor:pointer; }
+    .check-item input[type="checkbox"] { width:16px; height:16px; cursor:pointer; accent-color:#111; }
+
+    .btn-submit { background:#111; color:#fff; border:2px solid #111; padding:13px 32px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:background 0.2s; display:inline-flex; align-items:center; gap:8px; }
+    .btn-submit:hover { background:#333; }
+    .btn-submit:disabled { background:#888; border-color:#888; cursor:not-allowed; }
+
+    #fb-success { display:none; background:#f0faf0; border:1.5px solid #4caf50; padding:18px 20px; margin-top:18px; font-size:13.5px; color:#2e7d32; border-left:4px solid #4caf50; margin-bottom:25px; }
+
+    #message-board { margin-top:50px; border-top:2px dashed #ddd; padding-top:40px; }
+    #board-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+    #board-header h4 { font-size:16px; font-weight:900; text-transform:uppercase; color:#111; letter-spacing:1px; margin:0; }
+    #live-badge { background:#111; color:#fff; font-size:11px; font-weight:700; padding:5px 12px; letter-spacing:1px; display:flex; align-items:center; gap:6px; }
+    #live-dot { width:7px; height:7px; border-radius:50%; background:#4caf50; display:inline-block; animation:pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    #stats-bar { display:flex; border:1px solid #e0e0e0; margin-bottom:28px; }
+    .stat-box { flex:1; text-align:center; padding:16px 10px; border-right:1px solid #e0e0e0; }
+    .stat-box:last-child { border-right:none; }
+    .stat-num { font-size:26px; font-weight:900; color:#111; }
+    .stat-label { font-size:11px; color:#888; text-transform:uppercase; letter-spacing:1px; margin-top:3px; }
+
+    #loading-msg { font-size:13.5px; color:#888; font-style:italic; padding:20px 0; }
+    .msg-card { background:#fdfdfd; border:1px solid #e2e2e2; border-left:3px solid #111; padding:20px; margin-bottom:16px; }
+    .msg-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid #eee; padding-bottom:8px; flex-wrap:wrap; gap:6px; }
+    .msg-author { font-weight:700; color:#111; font-size:13.5px; }
+    .msg-type { font-size:11px; background:#111; color:#fff; padding:2px 8px; font-weight:600; letter-spacing:0.5px; margin-left:6px; }
+    .msg-meta { font-size:11.5px; color:#aaa; }
+    .msg-stars { color:#111; font-size:15px; margin-bottom:8px; }
+    .msg-likes span { background:#f0f0f0; padding:2px 8px; margin-right:4px; font-size:11.5px; display:inline-block; margin-bottom:4px; }
+    .msg-body { font-size:13.5px; color:#333; line-height:1.7; margin:8px 0; }
+    .msg-suggest { font-size:12.5px; color:#555; background:#f5f5f5; padding:10px 14px; border-left:3px solid #aaa; margin-top:10px; font-style:italic; }
+  </style>
+</head>
+<body>
+
+ 
+  <div id="header">
+    <div id="header-inner">
+      <div id="logo-area">
+        <img src="logogroup.png" alt="PSB Library Logo" id="logo-img" />
+        <div id="site-title">
+          <h1>PRISMA HUB<br />BOOK COLLECTION</h1>
+          <p>Knowledge &bull; Access &bull; Excellence</p>
+        </div>
+      </div>
+      <nav id="navbar">
+        <ul id="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li class="has-dropdown"><a href="#">BOOK COLLECTION &#9660;</a>
+            <ul class="dropdown">
+              <li><a href="book1.html">Metadata</a></li>
+              <li><a href="book2.html">Metadata for Digital Collections: A how-to-do-it manual</a></li>
+              <li><a href="book3.html">Continuing Professional Development: A Guide for Information Professionals</a></li>
+              <li><a href="book4.html">Delivering Web Reference Services to Young People</a></li>
+              <li><a href="book5.html">Information Literacy Programs: Successes and Challenges</a></li>
+              <li><a href="book6.html">Career paths and Career Development of Business librarians</a></li>
+              <li><a href="book7.html">Library Classification</a></li>
+              <li><a href="book8.html">Metadata for Digital Resources</a></li>
+              <li><a href="book9.html">Research Methods in Information</a></li>
+              <li><a href="book10.html">Fundamentals of Managing Reference Collections</a></li>
+            </ul>
+          </li>
+         <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="disclaimer.html">DISCLAIMER</a></li>
+          <li><a href="group.html">GROUP</a></li>
+          <li id="search-area">
+  <span id="search-icon">&#128269;</span>
+  <input type="text" id="searchInput" placeholder="Search books..." />
+  <div id="searchResults"></div>
+</li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div id="page-hero">
+    <div id="page-hero-inner">
+      <h2>FEEDBACK BOARD</h2>
+      <hr />
+      <p>We value your opinion. Help us improve by sharing your experience.</p>
+    </div>
+  </div>
+
+  <div id="fb-wrap">
+    <h3>Share Your Feedback</h3>
+    <p class="sub">Your feedback is public and visible to <strong>all visitors</strong> in real-time. Help us improve!</p>
+
+    <div id="rating-section">
+      <label>Overall Rating *</label>
+      <div id="stars">
+        <input type="radio" id="s5" name="rating" value="5" /><label for="s5" title="Excellent">&#9733;</label>
+        <input type="radio" id="s4" name="rating" value="4" /><label for="s4" title="Good">&#9733;</label>
+        <input type="radio" id="s3" name="rating" value="3" /><label for="s3" title="Average">&#9733;</label>
+        <input type="radio" id="s2" name="rating" value="2" /><label for="s2" title="Poor">&#9733;</label>
+        <input type="radio" id="s1" name="rating" value="1" /><label for="s1" title="Very Poor">&#9733;</label>
+      </div>
+      <p id="star-text">Click a star to rate</p>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fb-name">Full Name *</label>
+        <input type="text" id="fb-name" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label for="fb-email">Email Address (optional)</label>
+        <input type="text" id="fb-email" placeholder="your@email.com" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fb-type">Type of User *</label>
+      <select id="fb-type">
+        <option value="">-- Select --</option>
+        <option>Student</option>
+        <option>Lecturer</option>
+        <option>Researcher</option>
+        <option>General Public</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>What did you like? (Select all that apply)</label>
+      <div class="check-grid" id="fb-likes-grid">
+        <label class="check-item"><input type="checkbox" value="Book Information" /> Book Information</label>
+        <label class="check-item"><input type="checkbox" value="Website Design" /> Website Design</label>
+        <label class="check-item"><input type="checkbox" value="Easy Navigation" /> Easy Navigation</label>
+        <label class="check-item"><input type="checkbox" value="Image Gallery" /> Image Gallery</label>
+        <label class="check-item"><input type="checkbox" value="FAQ Section" /> FAQ Section</label>
+        <label class="check-item"><input type="checkbox" value="Overall Content" /> Overall Content</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fb-comment">Your Comments *</label>
+      <textarea id="fb-comment" placeholder="Tell us what you think about this website..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="fb-suggest">Suggestions for Improvement</label>
+      <textarea id="fb-suggest" placeholder="Any suggestions to make this website better?" style="height:90px;"></textarea>
+    </div>
+
+    <button class="btn-submit" id="fb-btn" onclick="submitFeedback()">&#10003; SUBMIT FEEDBACK</button>
+    <div id="fb-success">&#10003; Thank you! Your feedback has been posted and is now visible to ALL visitors in real-time! &#127881;</div>
+
+    <!-- LIVE BOARD -->
+    <div id="message-board">
+      <div id="board-header">
+        <h4>Recent User Feedback</h4>
+        <div id="live-badge"><span id="live-dot"></span> LIVE — ALL USERS</div>
+      </div>
+      <div id="stats-bar">
+        <div class="stat-box"><div class="stat-num" id="stat-total">-</div><div class="stat-label">Total Reviews</div></div>
+        <div class="stat-box"><div class="stat-num" id="stat-avg">-</div><div class="stat-label">Avg Rating</div></div>
+        <div class="stat-box"><div class="stat-num" id="stat-excellent">-</div><div class="stat-label">Excellent &#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+        <div class="stat-box"><div class="stat-num" id="stat-good">-</div><div class="stat-label">Good &#9733;&#9733;&#9733;&#9733;</div></div>
+      </div>
+      <div id="messages-container">
+        <p id="loading-msg">&#9203; Loading feedback from all users...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="big-footer" style="background:#111;color:#aaa;display:flex;padding:40px;">
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">ABOUT THIS PROJECT</h5>
+      <p style="font-size:13px;line-height:1.8;color:#888;">This website presents ten Information Management books available in Perpustakaan Sultan Badlishah. This project is for academic purposes only.</p>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">USEFUL LINKS</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="https://library.uitm.edu.my/kedah" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">Perpustakaan Sultan Badlishah</a></li>
+        <li style="margin-bottom:10px;"><a href="https://www.uitm.edu.my/en/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">UiTM Official Website</a></li>
+        <li style="margin-bottom:10px;"><a href="https://permata.uitm.edu.my/" target="_blank" style="color:#888;text-decoration:none;font-size:13px;">PTAR Portal</a></li>
+      </ul>
+    </div>
+    <div style="flex:1;padding-right:30px;border-right:1px solid #2a2a2a;margin-right:30px;">
+      <h5 style="font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;">SUPPORT</h5>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin-bottom:10px;"><a href="faqs.html" style="color:#888;text-decoration:none;font-size:13px;">FAQs</a></li>
+        <li style="margin-bottom:10px;"><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;">Contact Us</a></li>
+        <li style="margin-bottom:10px;"><a href="feedback.html" style="color:#888;text-decoration:none;font-size:13px;">Feedback</a></li>
+      </ul>
+    </div>
+        
+    </div>
+  </div>
+  <div id="footer">
+    <span>&copy; 2026 PRISMA HUB BOOK COLLECTION. All Rights Reserved.</span>
+    <span class="footer-sep">|</span><span>Last Updated: 29 June 2026</span>
+    <span class="footer-sep">|</span><span>Recommended Browser: Chrome, Firefox, Edge</span>
+    <span class="footer-sep">|</span><span>Resolution: 1366 x 768 and above</span>
+  </div>
+
+  <!-- FIREBASE REALTIME DATABASE SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getDatabase, ref, push, onValue, query, orderByChild, limitToLast } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+    // ── YOUR REAL FIREBASE CONFIG ──
+    const firebaseConfig = {
+      apiKey:            "AIzaSyAGN9DvStgjr2klV8_gbAdJq4n_MYy3sQo",
+      authDomain:        "psb-feedback.firebaseapp.com",
+      databaseURL:       "https://psb-feedback-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId:         "psb-feedback",
+      storageBucket:     "psb-feedback.firebasestorage.app",
+      messagingSenderId: "1087983325167",
+      appId:             "1:1087983325167:web:63ba1f1697d360b5a1f01a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getDatabase(app);
+
+    var starLabels = ['','Very Poor','Poor','Average','Good','Excellent'];
+
+    // ── STAR RATING ──
+    var stars = document.querySelectorAll('#stars input');
+    for (var i=0; i<stars.length; i++) {
+      stars[i].addEventListener('change', function() {
+        document.getElementById('star-text').innerHTML = 'You rated: <strong>' + starLabels[this.value] + ' (' + this.value + '/5)</strong>';
+      });
+    }
+
+    // ── LOAD ALL FEEDBACK IN REAL-TIME (all users see same data) ──
+    var feedbackRef = query(ref(db, 'feedback'), orderByChild('timestamp'), limitToLast(50));
+    onValue(feedbackRef, function(snapshot) {
+      var entries = [];
+      snapshot.forEach(function(child) {
+        entries.push(child.val());
+      });
+      entries.reverse(); // newest first
+      renderFeedback(entries);
+    });
+
+    // ── SUBMIT FEEDBACK ──
+    window.submitFeedback = async function() {
+      var name    = document.getElementById('fb-name').value.trim();
+      var type    = document.getElementById('fb-type').value;
+      var comment = document.getElementById('fb-comment').value.trim();
+      var suggest = document.getElementById('fb-suggest').value.trim();
+      var rated   = document.querySelector('#stars input:checked');
+
+      if (!name || !type || !comment || !rated) {
+        alert('Please fill in all required fields and select a rating.');
+        return;
+      }
+
+      var likedFeatures = [];
+      var checkboxes = document.querySelectorAll('#fb-likes-grid input[type="checkbox"]');
+      for (var k=0; k<checkboxes.length; k++) {
+        if (checkboxes[k].checked) likedFeatures.push(checkboxes[k].value);
+      }
+
+      var btn = document.getElementById('fb-btn');
+      btn.disabled = true;
+      btn.innerHTML = '&#9203; Posting...';
+
+      try {
+        await push(ref(db, 'feedback'), {
+          name:      name,
+          type:      type,
+          rating:    parseInt(rated.value),
+          comment:   comment,
+          suggest:   suggest || '',
+          likes:     likedFeatures.join(', ') || 'None selected',
+          timestamp: Date.now()
+        });
+
+        document.getElementById('fb-success').style.display = 'block';
+        document.getElementById('fb-success').scrollIntoView({ behavior: 'smooth' });
+
+        // Clear form
+        document.getElementById('fb-name').value    = '';
+        document.getElementById('fb-email').value   = '';
+        document.getElementById('fb-type').value    = '';
+        document.getElementById('fb-comment').value = '';
+        document.getElementById('fb-suggest').value = '';
+        for(var j=0;j<checkboxes.length;j++) checkboxes[j].checked = false;
+        for(var m=0;m<stars.length;m++) stars[m].checked = false;
+        document.getElementById('star-text').innerHTML = 'Click a star to rate';
+
+      } catch(err) {
+        alert('Error: ' + err.message);
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '&#10003; SUBMIT FEEDBACK';
+    }
+
+    // ── RENDER FEEDBACK CARDS ──
+    function renderFeedback(entries) {
+      var container = document.getElementById('messages-container');
+
+      // Update stats
+      var total = entries.length;
+      var ratingSum = 0, excellent = 0, good = 0;
+      for (var i=0; i<entries.length; i++) {
+        ratingSum += entries[i].rating;
+        if (entries[i].rating === 5) excellent++;
+        if (entries[i].rating === 4) good++;
+      }
+      document.getElementById('stat-total').innerHTML     = total;
+      document.getElementById('stat-avg').innerHTML       = total > 0 ? (ratingSum/total).toFixed(1) + ' / 5' : '-';
+      document.getElementById('stat-excellent').innerHTML = excellent;
+      document.getElementById('stat-good').innerHTML      = good;
+
+      if (entries.length === 0) {
+        container.innerHTML = '<p style="font-size:13.5px;color:#888;font-style:italic;">No feedback yet. Be the first to leave a review!</p>';
+        return;
+      }
+
+      var html = '';
+      for (var n=0; n<entries.length; n++) {
+        var e = entries[n];
+        var starStr = '';
+        for (var s=0; s<e.rating; s++) starStr += '★';
+        for (var c=e.rating; c<5; c++) starStr += '☆';
+
+        var timeStr = e.timestamp ? new Date(e.timestamp).toLocaleString() : '';
+
+        var likeTags = '';
+        if (e.likes && e.likes !== 'None selected') {
+          var likeArr = e.likes.split(', ');
+          for (var t=0; t<likeArr.length; t++) likeTags += '<span>' + likeArr[t] + '</span>';
+        }
+
+        html += '<div class="msg-card">' +
+          '<div class="msg-header">' +
+            '<span><span class="msg-author">' + e.name + '</span><span class="msg-type">' + e.type + '</span></span>' +
+            '<span class="msg-meta">' + timeStr + '</span>' +
+          '</div>' +
+          '<div class="msg-stars">' + starStr + ' &mdash; <strong>' + starLabels[e.rating] + '</strong></div>';
+
+        if (likeTags) html += '<div class="msg-likes">Liked: ' + likeTags + '</div>';
+        html += '<div class="msg-body">' + e.comment + '</div>';
+        if (e.suggest) html += '<div class="msg-suggest"><strong>Suggestion:</strong> ' + e.suggest + '</div>';
+        html += '</div>';
+      }
+      container.innerHTML = html;
+    }
+
+  </script>
+<script>
+  var booksData = [
+    { title: "Metadata", file: "book1.html" },
+    { title: "Metadata for Digital Collections: A how-to-do-it manual", file: "book2.html" },
+    { title: "Continuing Professional Development: A Guide for Information Professionals", file: "book3.html" },
+    { title: "Delivering Web Reference Services to Young People", file: "book4.html" },
+    { title: "Information Literacy Programs: Successes and Challenges", file: "book5.html" },
+    { title: "Career paths and Career Development of Business librarians", file: "book6.html" },
+    { title: "Library Classification", file: "book7.html" },
+    { title: "Metadata for Digital Resources", file: "book8.html" },
+    { title: "Research Methods in Information", file: "book9.html" },
+    { title: "Fundamentals of Managing Reference Collections", file: "book10.html" }
+  ];
+
+  var icon = document.getElementById('search-icon');
+  var input = document.getElementById('searchInput');
+  var resultsDiv = document.getElementById('searchResults');
+
+  icon.addEventListener('click', function() {
+    input.classList.toggle('show');
+    input.focus();
+  });
+
+  function renderResults(list) {
+    if (list.length === 0) {
+      resultsDiv.innerHTML = "<p style='color:#555;padding:8px;'>No books found.</p>";
+    } else {
+      var html = list.map(book => `<a href="${book.file}">${book.title}</a>`).join('');
+      resultsDiv.innerHTML = html;
+    }
+    resultsDiv.classList.add('show');
+  }
+
+  function doSearch() {
+    var keyword = input.value.trim().toLowerCase();
+    if (keyword === "") {
+      resultsDiv.classList.remove('show');
+      return;
+    }
+    var filtered = booksData.filter(book => book.title.toLowerCase().includes(keyword));
+    renderResults(filtered);
+  }
+
+  input.addEventListener('input', doSearch);
+</script>
+
+
+</body>
+</html>
